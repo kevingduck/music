@@ -139,8 +139,6 @@ def convert_to_music(song):
         for p in piece.split(' '):
             music.append(piece_time[p])
     
-    for note in music:
-        print(note)
     return music
 
 # generate random letter from a to g
@@ -149,7 +147,9 @@ def random_letter():
 
 def main():
     get_turns_from_game(game)
-    convert_to_music(song)
+    for note in convert_to_music(song):
+        for n in note.split(' '):
+            print(f'play :{random_letter()} \nsleep {n}')
     
 
 if __name__ == '__main__':
