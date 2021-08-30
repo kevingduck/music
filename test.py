@@ -46,6 +46,7 @@ note_times = {
     'sf': 0.015625
 }
 
+# TODO: find a better structure for this
 piece_time = {
   'k': str(note_times['h']) + ' ' + str(note_times['h']),
   'q': str(note_times['s']) + ' ' + str(note_times['s']) + ' ' +  str(note_times['s']) + ' ' + str(note_times['s']) +' ' +  str(note_times['q']) +' ' +  str(note_times['q']) +' ' +  str(note_times['q']),
@@ -147,6 +148,8 @@ def random_letter():
 
 def main():
     get_turns_from_game(game)
+
+    # Print for sonic pi
     for note in convert_to_music(song):
         for n in note.split(' '):
             print(f'play :{random_letter()} \nsleep {n}')
